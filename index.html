@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container nav-container">
+            <h1 class="logo">Website</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+                    <li><a href="components.html">Components</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container main-content">
+        <section class="hero-section">
+            <h2>Build clean layouts with Flexbox and Grid</h2>
+            <p>This homepage uses Flexbox for navigation and CSS Grid for structured content, supporting responsive breakpoints (1 column on mobile, 2 on tablet, 3 on desktop).</p>
+            <div class="hero-buttons">
+                <a href="components.html" class="btn">View components</a>
+                <a href="about.html" class="btn btn-secondary">Learn more</a>
+            </div>
+        </section>
+
+        <div class="responsive-grid">
+            <article class="card">
+                <h3>Flexible navigation</h3>
+                <p>The header is a flex container. The logo and links are pushed apart with justify-content.</p>
+            </article>
+            <article class="card">
+                <h3>Grid content</h3>
+                <p>Cards sit in three equal columns on desktop. The gap property handles all the spacing.</p>
+            </article>
+            <article class="card">
+                <h3>One breakpoint</h3>
+                <p>Below 700px the grid becomes one column, so every card stacks seamlessly on phones.</p>
+            </article>
+        </div>
+
+        <section class="card span-all" style="margin-top: 24px;">
+            <h3>About this page</h3>
+            <p>This wide card spans every column. All colors, radius, and spacing come from CSS variables defined once on :root, with automatic dark mode adaptation.</p>
+        </section>
+
+        <section class="card span-all" style="margin-top: 24px;">
+            <h3>Contact</h3>
+            <p>Questions about the lab? Send us a message.</p>
+            <div style="margin-top: 15px;">
+                <a href="contact.html" class="btn">Email the TA</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2026 Teal UI System. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

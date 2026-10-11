@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Components </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container nav-container">
+            <h1 class="logo">Website</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="components.html" class="active" aria-current="page">Components</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container main-content">
+        <section class="hero-section" style="margin-bottom: 30px;">
+            <h2>Component library</h2>
+            <p>Every style on this page comes from the CSS variables in style.css.</p>
+        </section>
+
+        <!-- Alert Notification -->
+        <div class="alert alert-success" role="alert">
+            <strong>Success!</strong> Component library loaded cleanly with accessibility contrast compliance.
+        </div>
+
+        <!-- Design Tokens Section -->
+        <section style="margin-bottom: 40px;">
+            <h3 style="margin-bottom: 15px; font-size: 1.5rem; color: var(--accent);">Design tokens</h3>
+            <div class="responsive-grid">
+                <div class="token-card">
+                    <div class="token-color" style="background-color: #2e6f95;"></div>
+                    <div class="token-info">--primary #2e6f95</div>
+                </div>
+                <div class="token-card">
+                    <div class="token-color" style="background-color: #f0f4f8; border-bottom: 1px solid var(--border-color);"></div>
+                    <div class="token-info">--bg #f0f4f8</div>
+                </div>
+                <div class="token-card">
+                    <div class="token-color" style="background-color: #102a43;"></div>
+                    <div class="token-info">--text #102a43</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Buttons Section -->
+        <section style="margin-bottom: 40px;">
+            <h3 style="margin-bottom: 15px; font-size: 1.5rem; color: var(--accent);">Buttons</h3>
+            <div style="display: flex; gap: 20px; align-items: center; flex-wrap: wrap;">
+                <div style="text-align: center;">
+                    <a href="#" class="btn" style="display: block; margin-bottom: 8px;">Default</a>
+                    <span style="font-size: 0.85rem; opacity: 0.7;">default</span>
+                </div>
+                <div style="text-align: center;">
+                    <a href="#" class="btn hover-state" style="display: block; margin-bottom: 8px;">Hover</a>
+                    <span style="font-size: 0.85rem; opacity: 0.7;">hover</span>
+                </div>
+                <div style="text-align: center;">
+                    <button class="btn btn-disabled" disabled style="display: block; margin-bottom: 8px;">Disabled</button>
+                    <span style="font-size: 0.85rem; opacity: 0.7;">disabled</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Card Component -->
+        <section style="margin-bottom: 40px;">
+            <h3 style="margin-bottom: 15px; font-size: 1.5rem; color: var(--accent);">Card</h3>
+            <div class="card" style="max-width: 400px;">
+                <h3>Card title</h3>
+                <p>A short description that explains what this card is about.</p>
+                <div style="margin-top: 15px;">
+                    <a href="#" class="btn">Read more</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CSS-Only Modal Showcase -->
+        <section style="margin-bottom: 40px;">
+            <h3 style="margin-bottom: 15px; font-size: 1.5rem; color: var(--accent);">CSS-Only Modal Window</h3>
+            <div class="card" style="max-width: 400px;">
+                <h3>Interactive Modal</h3>
+                <p>Click the button below to trigger the popup modal using pure CSS :target rules.</p>
+                <div style="margin-top: 15px;">
+                    <a href="#open-modal" class="btn">Open Modal</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Responsive Table Section -->
+        <section style="margin-bottom: 40px;">
+            <h3 style="margin-bottom: 15px; font-size: 1.5rem; color: var(--accent);">Responsive table</h3>
+            <div class="table-wrapper">
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Role</th>
+                            <th>Email</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Ada Lovelace</td>
+                            <td>Engineer</td>
+                            <td>ada@example.com</td>
+                            <td><span class="badge badge-active">Active</span></td>
+                        </tr>
+                        <tr>
+                            <td>Linus Torvalds</td>
+                            <td>Maintainer</td>
+                            <td>linus@example.com</td>
+                            <td><span class="badge badge-active">Active</span></td>
+                        </tr>
+                        <tr>
+                            <td>Grace Hopper</td>
+                            <td>Admiral</td>
+                            <td>grace@example.com</td>
+                            <td><span class="badge badge-away">Away</span></td>
+                        </tr>
+                        <tr>
+                            <td>Alan Turing</td>
+                            <td>Researcher</td>
+                            <td>alan@example.com</td>
+                            <td><span class="badge badge-active">Active</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <!-- CSS-Only Modal Overlay Window -->
+    <div id="open-modal" class="modal-overlay">
+        <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+            <h3 id="modal-title">Pure CSS Modal</h3>
+            <p>This modal dialog window is displayed completely through CSS targeting rules, requiring zero JavaScript logic.</p>
+            <div style="margin-top: 20px; text-align: right;">
+                <a href="#" class="btn btn-close">Close Modal</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2026 Teal UI System. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

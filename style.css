@@ -1,0 +1,316 @@
+/* Muted Teal Color Palette (Light Mode) */
+:root {
+    --primary: #2e6f95;          /* تيل أزرق مريح للعين */
+    --primary-hover: #1f4f6e;    /* درجة أغمق عند التحويم */
+    --accent: #1b4965;           /* أزرق بترولي غامق للعناوين والشعار */
+    --bg: #f0f4f8;               /* خلفية ناعمة جداً وباردة تريح العين */
+    --text: #102a43;             /* لون النصوص الأساسي الداكن */
+    --card-bg: #ffffff;          /* خلفية الكروت البيضاء */
+    --header-bg: #ffffff;
+    --border-color: #d9e2ec;     /* حدود ناعمة ومتناسقة */
+    --shadow: 0 4px 6px -1px rgba(46, 111, 149, 0.08);
+}
+
+/* Pure CSS Dark Mode (يعمل تلقائياً حسب إعدادات الجهاز) */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary: #62b6cb;
+        --primary-hover: #bee9e8;
+        --accent: #bee9e8;
+        --bg: #0b1d28;
+        --text: #f0f4f8;
+        --card-bg: #132a3e;
+        --header-bg: #132a3e;
+        --border-color: #244b6b;
+        --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+    }
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header & Nav */
+.site-header {
+    background-color: var(--header-bg);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo {
+    font-size: 1.5rem;
+    color: var(--accent);
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: color 0.2s, background-color 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--primary);
+    background-color: rgba(46, 111, 149, 0.12);
+}
+
+/* Main Content */
+.main-content {
+    padding: 40px 0;
+    min-height: 75vh;
+}
+
+.hero-section {
+    margin-bottom: 30px;
+}
+
+.hero-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    color: var(--primary);
+}
+
+.hero-section p {
+    font-size: 1.1rem;
+    opacity: 0.85;
+    margin-bottom: 20px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+/* Responsive Grid Breakpoints (Mobile First) */
+.responsive-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-top: 20px;
+}
+
+/* Tablet Breakpoint: 2 Columns */
+@media (min-width: 700px) {
+    .responsive-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Desktop Breakpoint: 3 Columns */
+@media (min-width: 1024px) {
+    .responsive-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Cards */
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 24px;
+    box-shadow: var(--shadow);
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    font-size: 1.25rem;
+    color: var(--accent);
+}
+
+.card p {
+    opacity: 0.85;
+}
+
+.span-all {
+    grid-column: 1 / -1;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    background-color: var(--primary);
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.2s;
+}
+
+.btn:hover {
+    background-color: var(--primary-hover);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text);
+}
+
+.btn-secondary:hover {
+    background-color: rgba(46, 111, 149, 0.08);
+}
+
+.hover-state {
+    background-color: var(--primary-hover);
+}
+
+.btn-disabled {
+    background-color: #9fb3c8;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.btn-close {
+    background-color: #c53030;
+}
+
+.btn-close:hover {
+    background-color: #9b2c2c;
+}
+
+/* Design Tokens Showcase Cards */
+.token-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.token-color {
+    height: 70px;
+    width: 100%;
+}
+
+.token-info {
+    padding: 12px 16px;
+    font-family: monospace;
+    font-size: 0.95rem;
+}
+
+/* Responsive Table */
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
+}
+
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--card-bg);
+    text-align: left;
+}
+
+.styled-table th {
+    background-color: var(--primary);
+    color: #ffffff;
+    padding: 14px 16px;
+    font-weight: 600;
+}
+
+.styled-table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.styled-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Status Badges */
+.badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.badge-active {
+    background-color: rgba(46, 133, 64, 0.15);
+    color: #2e8540;
+}
+
+.badge-away {
+    background-color: rgba(186, 55, 55, 0.15);
+    color: #ba3737;
+}
+
+/* Forms */
+.styled-form {
+    max-width: 650px;
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="number"],
+.form-group input[type="date"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background-color: var(--bg);
+    color: var(--text);
